@@ -77,7 +77,7 @@ TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, 
             self.searchTrackSpotify(elm.artist["#text"] + " " + elm.name, callback);
         };
 
-
+  console.log("pre: getWeeklyChartList");
   this.getWeeklyChartList(user, function (error, data) {
 
     if (error) {
