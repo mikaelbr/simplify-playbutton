@@ -1,0 +1,1359 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"date",
+				"dateOffset"
+			],
+			[
+				"html",
+				"html	html"
+			],
+			[
+				"right",
+				"right_wheel_speed"
+			],
+			[
+				"left",
+				"left_wheel_speed"
+			],
+			[
+				"getPla",
+				"getPlayButtonFromTracks  (function)"
+			],
+			[
+				"string",
+				"stringTracks"
+			],
+			[
+				"getPlay",
+				"getPlayButtonFromAlbum  (function)"
+			],
+			[
+				"playBu",
+				"playButtonTheme  (variable)"
+			],
+			[
+				"instance",
+				"instanceof"
+			],
+			[
+				"getPlayButtonFrom",
+				"getPlayButtonFromTracks"
+			],
+			[
+				"Me",
+				"MetaTuneException  (class)"
+			],
+			[
+				"gene",
+				"generatePlayButton  (function)"
+			],
+			[
+				"get",
+				"get_stagnation_left_wheel_speed  (function)"
+			],
+			[
+				"list-st",
+				"list-style-position"
+			],
+			[
+				"font-st",
+				"font-style:   (property)"
+			],
+			[
+				"list-sty",
+				"list-style-type"
+			],
+			[
+				"render",
+				"render_to_response  (function)"
+			],
+			[
+				"back",
+				"back_propagation"
+			],
+			[
+				"prop",
+				"back_propagation"
+			],
+			[
+				"tu",
+				"turn_right_data"
+			],
+			[
+				"p",
+				"export_weights  (function)"
+			],
+			[
+				"c",
+				"create_ann  (function)"
+			],
+			[
+				"_parse",
+				"_parse_inhibatory"
+			],
+			[
+				"activation",
+				"activation_function"
+			],
+			[
+				"get_f",
+				"get_float"
+			],
+			[
+				"Web",
+				"WebAnn"
+			],
+			[
+				"arc",
+				"arc_range"
+			],
+			[
+				"obs",
+				"obstruction"
+			],
+			[
+				"obstr",
+				"Obstruction"
+			],
+			[
+				"post",
+				"post_node"
+			],
+			[
+				"lear",
+				"learning_rule"
+			],
+			[
+				"to",
+				"topology"
+			],
+			[
+				"Ann",
+				"AnnParser"
+			],
+			[
+				"ex",
+				"execution_order"
+			],
+			[
+				"sectio",
+				"sections"
+			],
+			[
+				"extra",
+				"extract_links"
+			],
+			[
+				"extract_",
+				"extract_links"
+			],
+			[
+				"extract",
+				"extract_layers"
+			],
+			[
+				"ini",
+				"ini_parse"
+			],
+			[
+				"learing",
+				"learning_rule"
+			],
+			[
+				"parse_l",
+				"parse_link"
+			],
+			[
+				"out",
+				"output	<output>"
+			],
+			[
+				"Act",
+				"Activation"
+			],
+			[
+				"return",
+				"return_default"
+			],
+			[
+				"lay",
+				"layers_map"
+			],
+			[
+				"wei",
+				"weighted_input"
+			],
+			[
+				"la",
+				"Layer"
+			],
+			[
+				"ou",
+				"output_layer"
+			],
+			[
+				"SIGMOID_",
+				"SIGMOID_TANH"
+			],
+			[
+				"acti",
+				"activation"
+			],
+			[
+				"sig",
+				"sigmoid_log"
+			],
+			[
+				"_",
+				"_activation_function_str"
+			],
+			[
+				"prev",
+				"previous_activation_level"
+			],
+			[
+				"max",
+				"max_settling"
+			],
+			[
+				"qui",
+				"quiescent_mode"
+			],
+			[
+				"learn",
+				"learning_mode"
+			],
+			[
+				"ac",
+				"activation_function"
+			],
+			[
+				"run_",
+				"run_toy  (function)"
+			],
+			[
+				"so",
+				"source	<source>"
+			],
+			[
+				"set",
+				"ajaxSetup  (function)"
+			],
+			[
+				"data",
+				"databaseUrl"
+			],
+			[
+				"addr",
+				"address  (element)"
+			],
+			[
+				"fo",
+				"foo"
+			],
+			[
+				"mysql",
+				"mysql_info"
+			],
+			[
+				"my",
+				"mysql  (function)"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"ch",
+				"Chessboard"
+			],
+			[
+				"key",
+				"keywordIn"
+			],
+			[
+				"ke",
+				"keyword"
+			],
+			[
+				"ol",
+				"oldItem"
+			],
+			[
+				"top",
+				"topItem"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 823,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/index.js",
+			"settings":
+			{
+				"buffer_size": 869,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "libs/track-provider.js",
+			"settings":
+			{
+				"buffer_size": 3315,
+				"line_ending": "Unix",
+				"name": "lastfm-provider.js"
+			}
+		},
+		{
+			"contents": "var LastFmNode = require('lastfm').LastFmNode,\n    spotify = require('spotify'),\n    async = require(\"async\");\n\nvar lastfm = new LastFmNode({\n    api_key: process.env.SIMPLIFY_LASTFM_API_KEY,\n    secret: process.env.SIMPLIFY_LASTFM_SECRET\n});\n\nvar redis = require(\"redis\"),\n    client = redis.createClient();\n\n\nvar TrackProvider = function (){ };\n\n\nTrackProvider.prototype.getWeeklyTrackChart = function (user, dateOffset, limit, cb) {\n\n  if (typeof dateOffset === \"function\") {\n    cb = dateOffset;\n  }\n\n  if (typeof limit === \"function\") {\n    cb = limit;\n  }\n\n  this.getWeeklyChartList(user, function (error, data) {\n\n    if (error) {\n      cb.apply(error, [error, null]);\n      return;\n    }\n\n    var dates = data.weeklychartlist.chart;\n\n    if (typeof dateOffset === \"function\" || dateOffset >= dates.length || !dateOffset) {\n      dateOffset = 0;\n    }\n\n    from = dates[dates.length - dateOffset - 1].from;\n    to = dates[dates.length - dateOffset - 1].to;\n\n    lastfm.request(\"user.getWeeklyTrackChart\", {\n      user: user,\n      from: from,\n      to: to,\n      handlers: {\n        success: function(d) {\n\n          var tracks = d.weeklytrackchart.track;\n\n          if (tracks.length < 1) {\n            cb.apply(\"No results\", [\"No results\", null]);\n            return;\n          }\n\n          if (typeof limit === \"function\" || limit >= tracks.length || !limit) {\n            limit = 10;\n          }\n\n          if (tracks.length >= limit) {\n            tracks = tracks.splice(0, limit);\n          }\n\n          cb.apply(tracks, [null, tracks]);\n        },\n        error: function (e) {\n          cb.apply(e, [e, null]);\n        }\n      }\n    });\n\n  });\n\n};\n\nTrackProvider.prototype.searchTrackSpotify = function (trackName, cb) {\n\n  // This will return a JavaScript String\n  // client.get(trackName, function (err, reply) {\n\n  //   // Cache exits?\n  //   if ( reply ) {\n  //     console.log(\"up in hea\", reply);\n  //     cb.apply(reply, [null, reply]);\n  //     return;\n  //   }\n\n  //   // No cache.\n  //   console.log(\"no cache\", trackName);\n  spotify.search({ type: 'track', query: trackName }, function(err, data) {\n\n    if ( err || data.tracks.length < 1 ) {\n      // cb.apply(err || \"No tracks found\", [err || \"No tracks found\", null]);\n      cb(null, null);\n      return;\n    }\n\n    // client.set(trackName, data.tracks[0].href);\n    cb(null, data.tracks[0].href);\n  });\n\n  // });\n\n  // client.quit();\n};\n\n\nTrackProvider.prototype.getWeeklyChartList = function (user, cb) {\n\n  var request = lastfm.request(\"user.getWeeklyChartList\", {\n    user: user,\n    handlers: {\n      success: function(data) {\n        cb.apply(data, [null, data]);\n      },\n      error: function(error) {\n        cb.apply(error, [error, null]);\n      }\n    }\n  });\n\n  return request;\n};\n\nTrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, resCb) {\n  var self = this,\n  fn = function (elm, callback) {\n    var query = elm.artist[\"#text\"] + \" \" + elm.name;\n    self.searchTrackSpotify(query, callback);\n  };\n\n  self.getWeeklyTrackChart(user, dateOffset, function (err, data) {\n    if (err) {\n      resCb.apply(err, [err, null]);\n      return;\n    }\n\n    async.map(data, fn, resCb);\n  });\n};\n\nTrackProvider.prototype.extractURIs = function (data, cb) {\n\n  var fn = function (elm, callback) {\n    if ( !elm ) {\n      callback(null, null);\n      return;\n    }\n    callback(null, elm.href);\n  };\n  async.map(data, fn, cb);\n};\n\nexports.TrackProvider = new TrackProvider();",
+			"settings":
+			{
+				"buffer_size": 3471,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "libs/playbutton.js",
+			"settings":
+			{
+				"buffer_size": 310,
+				"line_ending": "Unix",
+				"name": "playbutton.js"
+			}
+		},
+		{
+			"file": "views/index.jade",
+			"settings":
+			{
+				"buffer_size": 239,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 242,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 147.0,
+		"selected_items":
+		[
+			[
+				"set syntax html",
+				"Set Syntax: HTML5"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"jad",
+				"Set Syntax: Jade"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"file",
+				"File: New View into File"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"gist",
+				"Gist: Create Public Gist"
+			],
+			[
+				"githu",
+				"GitHub: Public Gist from Selection"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set synta text",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"Lore",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"snippet #",
+				"Snippet: #!/usr/bin/env"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"html",
+				"Set Syntax: HTML5"
+			],
+			[
+				"fet",
+				"Fetch"
+			],
+			[
+				"Fet",
+				"Fetch"
+			],
+			[
+				"fetch",
+				"Fetch"
+			],
+			[
+				"linter",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"intel",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"pytho",
+				"Set Syntax: Python"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"linte",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"jQue",
+				"Snippet: Google AJAX Libraries: jQuery UI"
+			],
+			[
+				"snippet jq",
+				"Snippet: jQuery change handler"
+			],
+			[
+				"snippet j",
+				"Snippet: Object Value JS"
+			],
+			[
+				"aja",
+				"Snippet: jQuery AJAX call"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set synta jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"head",
+				"Snippet: <head>"
+			],
+			[
+				"snippet p",
+				"Snippet: New Property"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 111.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/mikaelbrevik/.zshrc",
+		"/Users/mikaelbrevik/Sites/experiments/playbutton/views/foo.jade",
+		"/Users/mikaelbrevik/Sites/experiments/playbutton/untitled.html",
+		"/Users/mikaelbrevik/Sites/experiments/playbutton/libs/funcs.js",
+		"/Users/mikaelbrevik/Sites/experiments/playbutton/index.html",
+		"/Users/mikaelbrevik/Sites/experiments/playbutton/test/simplify-playbutton.html",
+		"/Users/mikaelbrevik/Sites/experiments/playbutton/test/simplify-playbutton_test.js",
+		"/Users/mikaelbrevik/Sites/experiments/playbutton/src/simplify-playbutton.js",
+		"/Users/mikaelbrevik/Sites/experiments/playbutton/test/playbutton.html",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/index.html",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/index.php",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/stylesheets/styles.css",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/javascripts/main.js",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/examples/details_album.php",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/examples/playbutton_playlist.php",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/lib/MetaTune.class.php",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/README.md",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/lib/Album.class.php",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/examples/playbutton_singletrack.php",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/examples/playbutton_auto.php",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/examples/playbutton_album.php",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/User/Python.sublime-settings",
+		"/Users/mikaelbrevik/Dropbox/NTNU/Subsym/project4/code/original/retrieval.c",
+		"/Users/mikaelbrevik/Dropbox/NTNU/Subsym/project4/code/original/search.c",
+		"/Users/mikaelbrevik/Dropbox/NTNU/Subsym/project4/code/original/stagnation.c",
+		"/Users/mikaelbrevik/Sites/experiments/metaEnter/css/jquery.metaenter.css",
+		"/Users/mikaelbrevik/Sites/experiments/metaEnter/js/jquery.metaenter.js",
+		"/Users/mikaelbrevik/Sites/experiments/metaEnter/params.json",
+		"/Users/mikaelbrevik/Sites/experiments/metaEnter/index.html",
+		"/Users/mikaelbrevik/Sites/experiments/twitbuzzer/public/css/style.css",
+		"/Users/mikaelbrevik/Sites/experiments/twitbuzzer/README.md",
+		"/Users/mikaelbrevik/Sites/experiments/twitbuzzer/app.js",
+		"/Users/mikaelbrevik/Sites/experiments/twitbuzzer/lib/repo-provider.js",
+		"/Users/mikaelbrevik/Sites/experiments/twitbuzzer/lib/repo-provider.mongoose.js",
+		"/Users/mikaelbrevik/Sites/experiments/twitbuzzer/public/js/knockout.js",
+		"/Users/mikaelbrevik/Sites/experiments/twitbuzzer/public/js/jquery.js",
+		"/Users/mikaelbrevik/Sites/experiments/twitbuzzer/views/layout.html",
+		"/Users/mikaelbrevik/Sites/experiments/twitbuzzer/lib/repo-streamer.js",
+		"/Users/mikaelbrevik/Sites/experiments/bootstrap/less/grid.less",
+		"/Users/mikaelbrevik/Sites/experiments/bootstrap/less/forms.less",
+		"/Users/mikaelbrevik/Sites/experiments/bootstrap/less/navbar.less",
+		"/Users/mikaelbrevik/Sites/experiments/bootstrap/less/mixins.less",
+		"/Users/mikaelbrevik/Sites/experiments/bekk_python_django/todo/views.py",
+		"/Users/mikaelbrevik/Sites/experiments/bekk_python_django/templates/base.html",
+		"/Users/mikaelbrevik/Sites/experiments/bekk_python_django/todo/templates/todo/overview.html",
+		"/Users/mikaelbrevik/Sites/experiments/bekk_python_django/settings.py",
+		"/Users/mikaelbrevik/Sites/experiments/bekk_python_django/todo/models.py",
+		"/Users/mikaelbrevik/Sites/experiments/bekk_python_django/urls.py",
+		"/Users/mikaelbrevik/Sites/experiments/tmp/reg.php",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/link.py",
+		"/Applications/Webots/projects/robots/ann-epuck/example_scripts/xor.ini",
+		"/Applications/Webots/projects/robots/ann-epuck/example_xor_learning.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/scripts/hardwired.ini",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/scripts/learning.ini",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/fill_learning_data.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/scripts/headwired.ini",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/ann_modules.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/backup/static.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/backup/learning.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/data/learning.txt",
+		"/Applications/Webots/projects/robots/ann-epuck/example_xor.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/scripts/xor.ini",
+		"/Applications/Webots/projects/robots/ann-epuck/examples/xor.py",
+		"/Applications/Webots/projects/robots/ann-epuck/examples/scripts/xor.ini",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/temp.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/__init__.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/__init__.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/epuck_basic.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/scripts/static_ann.ini",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/__init__.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/arc.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/node.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/layer.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/test.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/example/scripts/xor.ini",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/example/xor.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/debug.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/manager.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/parser.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/ann/scripts/distance.ini",
+		"/Users/mikaelbrevik/Downloads/eventh-courses-880228aa619c/it3708/exercise4/webots/controllers/annbot/ann_static.py",
+		"/Applications/Webots/projects/robots/ann-epuck/controllers/webann/epuck2.py",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/sublime-github/GitHub.sublime-settings",
+		"/Users/mikaelbrevik/Sites/experiments/bekk_python_2/assigment2.py",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/public/js/dates.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/public/js/raphael.min.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/public/js/noisy.jquery.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/lib/repo-provider.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/routes/index.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/lib/config.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/public/js/popup.raphael.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/node_modules/jqtpl/lib/jqtpl.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/public/javascripts/mvvc.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/views/index.html",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/views/layout.html",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/node_modules/ntwitter/lib/twitter.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/node_modules/ntwitter/lib/parser.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/lib/db.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/twitbuzzer/package.json",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/mikaelbrevik/Documents/NTNU_Skole/subsym/Basic-Evolutionary-Programming/project2/code/main.py",
+		"/Users/mikaelbrevik/Desktop/untitled.js",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/User/<Unsaved>",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/Nodejs/Nodejs.sublime-settings",
+		"/Users/mikaelbrevik/Library/Application Support/Sublime Text 2/Packages/User/Nodejs.sublime-settings",
+		"/Users/mikaelbrevik/Downloads/html5õving1.html",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/examples/details_album.html",
+		"/Users/mikaelbrevik/Sites/mamp_root/metatune/examples/detailes_album.html",
+		"/Users/mikaelbrevik/.bashrc",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/code/web/js/icanhaz.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/code/config.js",
+		"/Users/mikaelbrevik/Sites/git/node-spotify/lib/spotify/Spotify.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/code/lib/spotify.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/code/web/js/bootstrap-twipsy.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/code/web/js/bootstrap-alerts.js",
+		"/Users/mikaelbrevik/Sites/node/example/test.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/code/.gitignore",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/code/web/js/jquery.infinitescroll.min.js",
+		"/Users/mikaelbrevik/Sites/node/twitbuzz_project/code/mongodb.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"{",
+			"extractURIs",
+			"console",
+			"searchTrackSpotify",
+			"error",
+			"LastFMProvider",
+			"IR_DI",
+			"1000",
+			"prioriticed",
+			"350",
+			"print",
+			"mark",
+			"twice",
+			"reset_stagnation",
+			"LOW_DIST_VALUE",
+			"ALIGN_STRAIGTH_THRESHOLD",
+			"NEIGHBOR_LIMIT",
+			"TURN_LIMIT",
+			"REVERSE_LIMIT",
+			"DISTANCE_DIFF_THRESHOLD",
+			"IR_DIFF_THRESHOLD",
+			"search",
+			".active",
+			"header",
+			"heder",
+			"active",
+			"footer",
+			"echo",
+			"false",
+			"extractTrackInfo",
+			"Rec",
+			"emitter",
+			"receiver",
+			"left_wheel_speed",
+			"right_wheel_speed",
+			"}",
+			"{",
+			"= {",
+			"converge",
+			"Converge",
+			"converge",
+			";",
+			"else if",
+			"IR_number",
+			"util",
+			"_fetch",
+			"console",
+			"i",
+			"console",
+			"metaenter-init",
+			"metabrag",
+			"@",
+			"metabrag",
+			"metab",
+			"popup",
+			"console",
+			",",
+			"repos.updatedRepo",
+			"console",
+			"#grid",
+			"carou",
+			"ul",
+			"spin",
+			"rand",
+			"curr",
+			"Wheels",
+			"Actions",
+			"Obstructions",
+			"Speed",
+			"learning",
+			"reset_to_test",
+			"reset_to_learn",
+			"set_inputs",
+			"get_output",
+			"back_propagation",
+			"testing",
+			"input_nodes",
+			"link_order_bp",
+			"learning_order",
+			"input",
+			"output",
+			"input",
+			"output",
+			"input",
+			"training",
+			"reset_for_testing",
+			"lenght",
+			"print",
+			"training",
+			"Reset",
+			"reset",
+			"Reset",
+			"reset",
+			"print",
+			"\n    [[1, 1], (0)],\n    [[0, 0], (0)],\n    [[0, 1], (1)],",
+			"layer_order",
+			"down_inhinhibitory",
+			"down_inh",
+			"up_inh",
+			", neg: %s",
+			"inhiba",
+			"insert_inhibitory",
+			"inhibatory",
+			"get_prox",
+			"self",
+			"activation",
+			"learning_mode",
+			"activation",
+			"list",
+			"step(",
+			"python",
+			"layers",
+			"gann",
+			"ann",
+			"elements",
+			"proximi",
+			"print",
+			"extract_links",
+			"links",
+			"add",
+			"config",
+			"get_func",
+			"get_int",
+			"get_string",
+			"get_layer",
+			"get_array",
+			"inited",
+			"print"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"settings":
+					{
+						"buffer_size": 823,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								635,
+								635
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "routes/index.js",
+					"settings":
+					{
+						"buffer_size": 869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								611,
+								611
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "libs/track-provider.js",
+					"settings":
+					{
+						"buffer_size": 3315,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1565,
+								1565
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "lastfm-provider.js",
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 326.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"settings":
+					{
+						"buffer_size": 3471,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3471,
+								3471
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1326.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "libs/playbutton.js",
+					"settings":
+					{
+						"buffer_size": 310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								273,
+								274
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "playbutton.js",
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/index.jade",
+					"settings":
+					{
+						"buffer_size": 239,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								239,
+								239
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.jslint_result_view":
+	{
+		"height": 94.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true
+}
