@@ -79,6 +79,7 @@ TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, 
 
   console.log("pre: getWeeklyChartList");
   this.getWeeklyChartList(user, function (error, data) {
+    console.log("Within getWeeklyChartList");
 
     if (error) {
         resCb.apply(error, [error, null]);
