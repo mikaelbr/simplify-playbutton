@@ -1,21 +1,11 @@
 var LastFmNode = require('lastfm').LastFmNode,
     spotify = require('spotify'),
-    async = require("async");
+    async = require("async"),
+    redis = require('redis-url').connect(process.env.REDISTOGO_URL);
 
 var lastfm = new LastFmNode({
     api_key: process.env.SIMPLIFY_LASTFM_API_KEY,
     secret: process.env.SIMPLIFY_LASTFM_SECRET
-});
-
-var redis = require("redis"),
-    client = redis.createClient();
-
-client.on("error", function (err) {
-    console.log("Error " + err);
-});
-
-client.on("ready", function (err) {
-    console.log("Redis server ready");
 });
 
 var TrackProvider = function () { };
@@ -119,7 +109,7 @@ TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, 
 
 
     // This will return a JavaScript String
-    client.get(redisKey, function (err, reply) {
+    redis.get(redisKey, function (err, reply) {
 
       if (err) throw err;
 
@@ -139,7 +129,7 @@ TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, 
           }
 
           async.map(data, fn, function (err, data) {
-            client.set(redisKey, JSON.stringify(data), redis.print);
+            redis.set(redisKey, JSON.stringify(data), redis.print);
             resCb(err, data);
           });
       });

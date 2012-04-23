@@ -5,9 +5,9 @@
   "dependencies": {
     "express": "2.5.8",
     "jade": ">= 0.0.1",
-    "redis": "~0.7.1",
     "async": "~0.1.18",
     "lastfm": "~0.8.1",
-    "spotify": "~0.2.0"
+    "spotify": "~0.2.0",
+    "redis-url": "0.1.0"
   }
 }
