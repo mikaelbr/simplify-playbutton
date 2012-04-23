@@ -20,6 +20,7 @@ exports.user = function (req, res) {
 
   tracks.getCompleteDataSet(user, dateOffset, limit, function (err, data) {
     if (err) {
+      console.log(err);
       tracklist = [];
     } else {
       tracklist = playbutton.makeSrc(data);
