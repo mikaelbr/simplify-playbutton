@@ -107,6 +107,7 @@ TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, 
 
     redisKey = limit + "-" + user + "-" + from + "-" + to;
 
+    console.log("RedisKey:", redisKey);
 
     // This will return a JavaScript String
     redis.get(redisKey, function (err, reply) {
@@ -115,6 +116,7 @@ TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, 
 
       if ( reply ) {
         try {
+          console.log("RedisKey Found:", reply);
           resCb(null, JSON.parse(reply));
           return;
         } catch (ex) {
@@ -129,7 +131,8 @@ TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, 
           }
 
           async.map(data, fn, function (err, data) {
-            redis.set(redisKey, JSON.stringify(data), redis.print);
+            console.log("Data:", data);
+            redis.set(redisKey, JSON.stringify(data));
             resCb(err, data);
           });
       });
