@@ -28,6 +28,8 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
+app.enable("jsonp callback");
+
 // Routes
 
 app.get('/', routes.index);

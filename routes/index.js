@@ -39,7 +39,7 @@ exports.user = function (req, res) {
     if (req.param("format") == "json") {
       // Show JSON API
       res.contentType('json');
-      res.send(playbutton.makeJSONFormatted(obj));
+      res.json(playbutton.makeJSONFormatted(obj));
     } else {
       res.render('iframe', obj);
     }

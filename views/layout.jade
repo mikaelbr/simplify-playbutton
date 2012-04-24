@@ -1,11 +1,36 @@
-!!!5
+!!! 5
 html
   head
     title Simplify Play Button - #{title}
-    block scripts
-      script(src='/jquery.js')
+    link(rel="stylesheet", href="/stylesheets/reset.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
   body
-    block content
-    block foot
-      #footer
-        p some footer content
+    
+
+    section#wrapper
+        header
+            h1 #{title}
+
+        nav#toc
+            ul
+                li 
+                    a What is this
+                li 
+                    a What is this
+                li 
+                    a What is this
+                li 
+                    a What is this
+                li 
+                    a What is this
+
+        section#content
+            block content
+    
+        block footer
+          footer
+            p Simplify Play Button - Add automated play button to your blog!
+
+    block scripts
+      script(src='/javascripts/jquery.js')
+

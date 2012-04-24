@@ -1,8 +1,61 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 14px;
 }
 
-a {
-  color: #00B7FF;
+
+/****************************
+ *      Font Properties     *
+ ****************************/
+
+h1, h2, h3, h4 {
+    font-weight: bold;
 }
+h1 {
+    font-size: 1.9em;
+    line-height: 1.9em;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+h3 {
+    font-size: 1.3em;
+    line-height: 1.3em;
+}
+
+
+/* Colors */
+a {
+    color: #00B7FF;
+}
+
+
+/****************************
+ *      PAGE STRUCTURE      *
+ ****************************/
+
+#wrapper {
+    width: 800px;
+    margin: 0px auto;
+}
+
+#wrapper > #content,
+#wrapper > footer,
+#wrapper > header {
+    margin-left: 200px;
+}
+
+#wrapper > nav {
+    width: 200px;
+    background: green;
+    float: left;
+    position: relative;
+}
+
+
+ /****************************
+ *      Font Properties     *
+ ****************************/
