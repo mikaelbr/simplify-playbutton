@@ -39,10 +39,9 @@ html(lang='en-US')
           .two-third
             h1 What is this?
             p
-              | This is a automated service for automaticly generating 
+              | This is a service for automaticly generating 
               a(href='https://developer.spotify.com/technologies/spotify-play-button/') Spotify Play Button
-              |  for your
-              | weekly 
+              |  widget for your weekly 
               a(href='http://last.fm') Last.fm
               |  scrobbled tracks.
               | This service saves you the trouble of either making playlists of the tracks manually, or finding the spotify URI of
@@ -88,7 +87,7 @@ html(lang='en-US')
               li
                 a(href='#license') Terms of Use
           p
-            strong Note:
+            strong Note: 
             | This generator uses the Simplify Play Button's JSON API, and therefor gives you a static "direct to the source" iframe. I.e. an iframe directly to the Spotify Play Button. It will not change over time in any way, so when a new week starts the same songs will still be in this list. To have this dynamic you must go through the Simplify Play Button iframe. You can see examples of this
             | further down in the documentation and examples.
           br
@@ -179,7 +178,7 @@ html(lang='en-US')
             | " to the URL.
           br
           p
-            strong Note:
+            strong Note: 
             | The URI aspect of the parameters are gone. This will be covered later in this section
           br
           table
@@ -278,7 +277,7 @@ html(lang='en-US')
           //
              End Menu 
           p
-            strong Note:
+            strong Note: 
             | The following examples uses my username. Replace «mikaelb1» with your username to make it work for you.
           .hr
           .two-third
@@ -338,7 +337,7 @@ html(lang='en-US')
             a(href='https://developer.spotify.com/technologies/spotify-play-button/terms-of-use/') at this location
             | .
           p
-            strong Note:
+            strong Note: 
             | I have no ownership of the Spotify name/trademark or the Spotify Play Button. I just implemented this solution to simplify the use of the awesome existing service provided by Spotify. I take no responsibility for your use of this service.
         //
            End Example Content 
@@ -364,7 +363,10 @@ html(lang='en-US')
         //
            Twitter Button 
         span
-          a.twitter-share-button(href='https://twitter.com/share', data-count='horizontal') Tweet
+          a.twitter-share-button(href='https://twitter.com/share', 
+            data-count='horizontal',
+            data-hashtags="#lastfm #spotify #simplifyplaybutton",
+            data-text="Auto create Spotify Play Button of your weekly Last.fm scrobbled tracks.") Tweet
           script(type='text/javascript', src='//platform.twitter.com/widgets.js')
     //
        End Footer 
