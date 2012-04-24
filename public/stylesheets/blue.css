@@ -1,0 +1,46 @@
+a {
+    color: #bababa;
+}
+a:hover {
+    color: #ad6069;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #7da1bc;
+}
+ul li {
+    background-image: url(../images/bullet-blue.png);
+}
+.lite1 {
+    color: #7DA1BC;
+    border-bottom: 1px dotted #7DA1BC;
+}
+.lite2 {
+    border-bottom: 1px dotted #717171;
+}
+a.button {
+    background-color: #629ac4;
+    color: #f3f3f3;
+    border: 1px solid #3b6c91;
+}
+a.button:hover {
+    background-color: #73aad3;
+    color: #f3f3f3;
+}
+a.appstore {
+    color: #232323;
+}
+a.appstore:hover {
+    background-color: #79aed5;
+}
+.menu ul li a {
+    color: #5e5e5e;
+}
+.menu ul li a:hover, .menu ul li a.active {
+    color: #ad6069;
+}
+.coda-nav ul li a.current, .coda-nav ul li a:hover {
+    color: #ad6069;
+}
+.coda-nav ul li a {
+    color: #5e5e5e;
+}

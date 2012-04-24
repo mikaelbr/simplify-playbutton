@@ -1,0 +1,34 @@
+a.box {
+	border: 1px solid #d1d1d1;
+}
+
+.forms fieldset .btn-submit {
+	padding: 0 25px 1px 25px;
+	line-height: 20px;
+	clear: both;
+	margin-left: 92px;
+}
+
+.forms label {
+	float: left;
+	width: 100px;
+}
+
+.forms fieldset .text-input {
+	float: right;
+}
+.forms fieldset .text-area {
+	float: right;
+}
+
+
+#footer-wrapper {
+	height: 160px;
+}
+
+#body-wrapper {
+	margin: 0 0 -160px 0; 
+}
+.push {
+	height: 160px; 
+}

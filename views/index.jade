@@ -1,23 +1,372 @@
-extends layout
+!!! 5
+html(lang='en-US')
+  head
+    meta(charset='UTF-8')
+    title #{title}
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css', media='all')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/museo.css', media='all')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/charis.css', media='all')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/blue.css', media='all')
+    //if IE 7
+      link(rel='stylesheet', type='text/css', href='/stylesheets/ie7.css', media='all')
+    //if IE 8
+        link(rel='stylesheet', type='text/css', href='/stylesheets/ie8.css', media='all')
+    //if IE 9
+        link(rel='stylesheet', type='text/css', href='/stylesheets/ie9.css', media='all')
 
-block content
-    section#whatis
-        h2 What is Simplify Play Button?
-        p Some more information here.
-
-
-    section#generator
-        h2 Just let me implement it, already!
-
-
-        div#generator
-            h3 Demonstration
-
-
-    section#documentation
-        h2 Documentation
-
-
-    section#examples
-        h2 Different examples and permutations
-
+    script(type='text/javascript', src='/javascripts/jquery.min.js')
+  body
+    //
+       Begin Body Wrapper 
+    #body-wrapper
+      //
+         Begin Intro Wrapper 
+      #intro-wrapper
+        //
+           Begin Intro 
+        #intro
+          //
+             Begin Header 
+          #header
+            .logo
+              h1
+                a(href='2.html') Simplify Play Button
+           
+          //
+             End Header 
+          //
+             Begin Intro Content 
+          .two-third
+            h1 What is this?
+            p
+              | This is a automated service for automaticly generating 
+              a(href='https://developer.spotify.com/technologies/spotify-play-button/') Spotify Play Button
+              |  for your
+              | weekly 
+              a(href='#') Last.fm
+              |  scrobbled tracks.
+              | This service saves you the trouble of either making playlists of the tracks manually, or finding the spotify URI of
+              | each and every track you want to add.
+            br
+            p
+              | Simplify Play Button is really easy to use, all you really need is your 
+              a(href='http://last.fm') Last.fm
+              |  username, and use the
+              | generator down below. This will give you a iframe to paste into your blog any other site with HTML support.
+            a.appstore
+              img(src='http://mikaelbr.github.com/metatune/images/octocat-logo.png', alt='')
+              span
+                | Fork me on
+                em Github
+          .one-third.last
+            iframe(frameborder='0', allowtransparency='true', width='280px', height='350px', src='http://simplifyplay.herokuapp.com/mikaelb1')
+          .clear
+          //
+             End Intro Content 
+        //
+           End Intro 
+      //
+         End Intro Wrapper 
+      //
+         Begin Wrapper 
+      #wrapper
+        .intro Easily create a Spotify Play Button widget with your Last.fm scrobbled tracks.
+        //
+           Begin Screenshots Content 
+        #generator.borderline
+        .content
+          //
+             Begin Menu 
+          .menu
+            ul
+              li
+                a.active(href='#generator') Generator
+              li
+                a(href='#documentation') Documentation
+              li
+                a(href='#examples') Examples
+              li
+                a(href='#license') Terms of Use
+          p
+            strong Note:
+            | This generator uses the Simplify Play Button's JSON API, and therefor gives you a static "direct to the source" iframe. I.e. an iframe directly to the Spotify Play Button. It will not change over time in any way, so when a new week starts the same songs will still be in this list. To have this dynamic you must go through the Simplify Play Button iframe. You can see examples of this
+            | further down in the documentation and examples.
+          br
+          //
+             End Menu 
+          .contact
+            .two-third
+              .form-container
+                form#play-generator.forms(action='', method='post')
+                  fieldset
+                    ol
+                      li.form-row.text-input-row
+                        label Last.fm Username*
+                        input.text-input.required(type='text', name='username', value='', title='', placeholder='mikaelb1')
+                      li.form-row.text-input-row
+                        label Theme
+                        select(name='theme')
+                          option Black
+                          option White
+                      li.form-row.text-input-row
+                        label View
+                        select(name='view')
+                          option List
+                          option Coverart
+                      li.form-row.text-input-row
+                        label Width/Height (px)
+                        input.text-input.half(type='text', name='width', value='250', title='')
+                        | x
+                        input.text-input.half(type='text', name='height', value='330', title='')
+                      li.form-row.text-input-row
+                        label Limit
+                        input.text-input(type='range', name='limit', value='10', min='1', max='20')
+                      li.form-row.text-area-row
+                        label Copy/paste
+                        textarea.text-area(name='generator-code', readonly='true')
+                          iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='https://embed.spotify.com/?uri=spotify:trackset:mikaelb1%3A%20Last%20played%20tracks:2MVwrvjmcdt4MsYYLCYMt8,0wP3e5PzSxafy2TRtlayq9,31QMc40Ahc3fiLwHWI32kI,1ZU8wpP0XA8Qi9LcDgRSAT,0ShCNMVGhCxVR0j1CqXtq0,7qr1O3X9GnuyO7Z5PLxj6g,1VWZAuX9hbQbCW0iW3UQE5,4YkmvF9kPRR0HOOK5XUxjZ,3c1hfcsymUYQJcOL3HXdAD,1VvyRNSVBKuvENwpyiVlBU&theme=black&view=list')
+                      li.button-row
+                        input.btn-submit(type='submit', value='Generate', name='submit')
+                .response
+            #generator-result.one-third.last
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='350px', src='http://simplifyplay.herokuapp.com/mikaelb1')
+        //
+           End Screenshots Content 
+        //
+           Begin Features Content 
+        #documentation.borderline
+        .content
+          //
+             Begin Menu 
+          .menu
+            ul
+              li
+                a(href='#generator') Generator
+              li
+                a.active(href='#documentation') Documentation
+              li
+                a(href='#examples') Examples
+              li
+                a(href='#license') Terms of Use
+          //
+             End Menu 
+          p
+            | This service is an extra layer on top of the regular 
+            a(href='https://developer.spotify.com/technologies/spotify-play-button/') Spotify Play Button
+            | . All it does is fetch the recently played tracks of a user, searches through the Spotify Metadata API for URIs and generates an appropriate iframe to show of the new awesome play button.
+          br
+          p
+            | Due to this only being a top layer, all the options and parameters from the original Spotify Play Button still exists. I highly recomend you read through their documentation, as I won't cover all limitations and such for the different params.
+          br
+          h2 Basic usage
+          p
+            | The most basic usage is to follow the guide from the 
+            a(href='https://developer.spotify.com/technologies/spotify-play-button/documentation/') Spotify Play Button Documentation
+            | , and swap out the iframe source with this:
+          pre.codeout.url.
+            http://simplifyplay.herokuapp.com/«YOUR_LASTFM_USERNAME»
+            
+          p Resulting in this complete code:
+          pre.codeout.url.
+            &lt;iframe src='http://simplifyplay.herokuapp.com/«YOUR_LASTFM_USERNAME»' frameborder='0' allowtransparency='true' width='250px' height='330px'&gt;&lt;/iframe&gt;
+            
+          p Parameters (as seen below) can be appended after your username. See examples
+          .hr
+          h2 The original Spotify Play Button options
+          p
+            | These options are used as GET parameters. E.g. for the theme, you can add "
+            code &theme=white
+            | " to the URL.
+          br
+          p
+            strong Note:
+            | The URI aspect of the parameters are gone. This will be covered later in this section
+          br
+          table
+            thead
+              tr
+                th Parameter
+                th Value
+                th Large only
+                th Default
+            tbody
+              tr
+                td theme
+                td black, white
+                td ✓
+                td black
+              tr
+                td view
+                td list, coverart
+                td ✓
+                td list
+          .hr
+          h2 Simplify Player Button – Specifics
+          table
+            thead
+              tr
+                th Parameter
+                th Description
+                th Value
+                th Default
+            tbody
+              tr
+                td URL
+                td
+                  | The base url for your user. Simply this sites URL appended by your username. Append GET parms to this URL.
+                td string
+                td
+              tr
+                td offset
+                td
+                  | Week offset. An offset of 1 results in getting the previous weeks top track list, etc.
+                td
+                  | integer
+                  | 0
+                td 0
+              tr
+                td limit
+                td
+                  | How many tracks to show. The Spotify Play Button has an internal restriction of 20 tracks for the trackset option.
+                td integer [1, 20]
+                td 10
+          .hr
+          h2 JSON API
+          p
+            | There's also a JSON API. This is for when you want to show the generated Play Button without going all Inception with an iframe within an iframe.
+          br
+          p
+            | To access the JSON data, just append a
+            code .json
+            | extension after your username in the URL. All parameters works as before, appended to the URL. For the JSON data, you can also use width and height as a GET parameter.
+          br
+          h3 Example JSON response
+          pre.codeout.url.
+            <a href="http://simplifyplay.herokuapp.com/mikaelb1.json">http://simplifyplay.herokuapp.com/mikaelb1.json</a>
+            
+          pre.codeout.
+            {
+                "title": "Automated Spotify Play Button",
+                "listname": "mikaelb1%3A%20Last%20played%20tracks",
+                "tracklist": "2MVwrvjmcdt4MsYYLCYMt8,0wP3e5PzSxafy2TRtlayq9,31QMc40Ahc3fiLwHWI32kI,1ZU8wpP0XA8Qi9LcDgRSAT,0ShCNMVGhCxVR0j1CqXtq0,7qr1O3X9GnuyO7Z5PLxj6g,1VWZAuX9hbQbCW0iW3UQE5,4YkmvF9kPRR0HOOK5XUxjZ,3c1hfcsymUYQJcOL3HXdAD,1VvyRNSVBKuvENwpyiVlBU",
+                "width": 250,
+                "theme": "black",
+                "height": 330,
+                "view": "list",
+                "HTML": "&lt;iframe frameborder='0' allowtransparency='true' width='250px' height='330px' src='https://embed.spotify.com/?uri=spotify:trackset:mikaelb1%3A%20Last%20played%20tracks:2MVwrvjmcdt4MsYYLCYMt8,0wP3e5PzSxafy2TRtlayq9,31QMc40Ahc3fiLwHWI32kI,1ZU8wpP0XA8Qi9LcDgRSAT,0ShCNMVGhCxVR0j1CqXtq0,7qr1O3X9GnuyO7Z5PLxj6g,1VWZAuX9hbQbCW0iW3UQE5,4YkmvF9kPRR0HOOK5XUxjZ,3c1hfcsymUYQJcOL3HXdAD,1VvyRNSVBKuvENwpyiVlBU&theme=black&view=list'&gt;&lt;/iframe&gt;"
+            }
+                              
+                              
+        //
+           End Documentation Content 
+        //
+           Begin Example Content 
+        #examples.borderline
+        .content.example-content
+          //
+             Begin Menu 
+          .menu
+            ul
+              li
+                a(href='#generator') Generator
+              li
+                a(href='#documentation') Documentation
+              li
+                a.active(href='#examples') Examples
+              li
+                a(href='#license') Terms of Use
+          //
+             End Menu 
+          p
+            strong Note:
+            | The following examples uses my username. Replace «mikaelb1» with your username to make it work for you.
+          .hr
+          .two-third
+            h1 Dynamic Play Button
+            p
+              | This widget goes through the Simplify's services, and allways shows the newest track chart list from Last.fm. When new data
+              | is added to the Last.fm API (i.e. new week), the list will update.
+            br
+            p
+              | This widget is perfect for showing off your continuously awesome music taste to the world!
+            br
+            h3 Code
+            textarea.text-area(name='generator-code', readonly='true')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/mikaelb1')
+          .one-third.last
+            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/mikaelb1')
+          .clear
+          .hr
+          .two-third
+            h1 Showing top tracks for last week as coverart
+            p
+              | In this example we use the
+              code offset
+              | parameter for showing the most played tracks for last week (always relative to current week.). We also try out a Spotify Play Button property; view.
+            br
+            h3 Code
+            textarea.text-area(name='generator-code', readonly='true')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/mikaelb1?view=coverart&offset=1')
+          .one-third.last
+            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/mikaelb1?view=coverart&offset=1')
+          .clear
+        //
+           End Example Content 
+        //
+           End Documentation Content 
+        //
+           Begin Example Content 
+        #license.borderline
+        .content
+          //
+             Begin Menu 
+          .menu
+            ul
+              li
+                a(href='#generator') Generator
+              li
+                a(href='#documentation') Documentation
+              li
+                a(href='#examples') Examples
+              li
+                a.active(href='#license') Terms of Use
+          //
+             End Menu 
+          h2 Terms of Use
+          p
+            | To use this service you need to agree to the Spotify Terms Of Use. This can be found 
+            a(href='https://developer.spotify.com/technologies/spotify-play-button/terms-of-use/') at this location
+            | .
+          p
+            strong Note:
+            | I have no ownership of the Spotify name/trademark or the Spotify Play Button. I just implemented this solution to simplify the use of the awesome existing service provided by Spotify. I take no responsibility for your use of this service.
+        //
+           End Example Content 
+      //
+         End Wrapper 
+      .push
+    //
+       End Body Wrapper 
+    //
+       Begin Footer 
+    #footer-wrapper
+      #footer
+        p Copyright © 2012 Simplify Play Button. All Rights Reserved.
+        //
+           Google+ Button 
+        g:plusone(size='medium')
+        script(type='text/javascript')
+          (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        //
+           Twitter Button 
+        span
+          a.twitter-share-button(href='https://twitter.com/share', data-count='horizontal') Tweet
+          script(type='text/javascript', src='//platform.twitter.com/widgets.js')
+    //
+       End Footer 
+    script(type='text/javascript', src='javascripts/generator.js')
+    script(type='text/javascript', src='javascripts/scripts.js')

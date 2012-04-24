@@ -1,0 +1,8 @@
+a.box {
+	border: 1px solid #d1d1d1;
+}
+
+.forms fieldset .btn-submit {
+	padding: 0 25px 2px 25px;
+	line-height: 20px;
+}
