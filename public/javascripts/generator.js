@@ -2,7 +2,7 @@
 (function ($, window, undefined) {
 
     var methods = {
-        baseURL: "http://localhost:5000/",
+        baseURL: "http://simplifyplay.herokuapp.com/",
 
         init: function (options) {
             methods._ajaxSettings.call( this );
