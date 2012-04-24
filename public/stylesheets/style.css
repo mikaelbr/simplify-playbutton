@@ -902,6 +902,7 @@ a.enlarge span {
 .forms li.select-row {
 }
 .forms li.button-row {
+    margin-bottom: 10px;
 }
 .forms li.hidden-row {
     display: none;
