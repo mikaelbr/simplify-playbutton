@@ -120,7 +120,7 @@
 
         _renderResponseCode: function (jsonData) {
             $("#generator-result").html(jsonData.HTML);
-            $("[name='generator-code']").val(jsonData.HTML);
+            $("#generator-code").val(jsonData.HTML);
         }
     };
 
