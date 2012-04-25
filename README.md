@@ -92,5 +92,7 @@ For now the code is pretty cowboy-ish and lacks proper code documentation. This 
 # License 
 
 ```
-SPOTIFY Disclaimer This product uses a SPOTIFY API but is not endorsed, certified or otherwise approved in any way by Spotify. Spotify is the registered trade mark of the Spotify Group.
+SPOTIFY Disclaimer This product uses a SPOTIFY API but is not endorsed, 
+certified or otherwise approved in any way by Spotify. Spotify is the 
+registered trade mark of the Spotify Group.
 ```
