@@ -38,7 +38,7 @@ PlayButton.prototype.show = function (req, res, extras) {
     limit = req.param("limit") || 10,
     height = req.param("height") || 330,
     period = req.param("period") || "overall", // can be overall | 7day | 1month | 3month | 6month | 12month
-    generatorMade = req.param("generatorMade") || false,
+    generatorMade = req.param("generator") || false,
     tracklist,
     options = {
       dateOffset: dateOffset,
