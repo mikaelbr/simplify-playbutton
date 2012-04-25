@@ -28,7 +28,13 @@ Resulting in this complete code:
 
 
 ```html
-&lt;iframe src='http://simplifyplay.herokuapp.com/user/«YOUR_LASTFM_USERNAME»' frameborder='0' allowtransparency='true' width='250px' height='330px'&gt;&lt;/iframe&gt;
+<iframe 
+    src='http://simplifyplay.herokuapp.com/user/«YOUR_LASTFM_USERNAME»' 
+    frameborder='0' 
+    allowtransparency='true' 
+    width='250px' 
+    height='330px'
+></iframe>
 ```
 
 For more documentation of how to use the service visit the site at [http://simplifyplay.herokuapp.com](http://simplifyplay.herokuapp.com).
@@ -82,3 +88,9 @@ Note: You should have redis up and running.
 
 ### An apology
 For now the code is pretty cowboy-ish and lacks proper code documentation. This will get fixed as soon as I get around to it (albeit, it should have been there already).
+
+# License 
+
+```
+SPOTIFY Disclaimer This product uses a SPOTIFY API but is not endorsed, certified or otherwise approved in any way by Spotify. Spotify is the registered trade mark of the Spotify Group.
+```
