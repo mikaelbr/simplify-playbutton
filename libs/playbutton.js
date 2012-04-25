@@ -2,7 +2,9 @@ var util = require("util"),
     tracks = require("../libs/track-provider").TrackProvider,
     redis = require('redis-url').connect(process.env.REDISTOGO_URL);
 
-var PlayButton = function (){ };
+var PlayButton = function (){ },
+    excludeUsernamesFromStats = "mikaelb1";
+
 
 PlayButton.prototype.makeSrc = function (tracks) {
     var fixed = [],
@@ -88,13 +90,16 @@ PlayButton.prototype.show = function (req, res, extras) {
 
       if (generatorMade) {
         redis.incr("SPB_GENERATOR_MADE_TOTAL");
+      } else {
+        redis.incr("SPB_JSON_LOOKUPS_TOTAL");
       }
 
-      redis.incr("SPB_JSON_LOOKUPS_TOTAL");
 
       res.json(self.makeJSONFormatted(obj));
     } else {
-      redis.incr("SPB_VIEWS_TOTAL");
+      if (user !== excludeUsernamesFromStats) {
+        redis.incr("SPB_VIEWS_TOTAL");
+      }
       res.render('iframe', obj);
     }
     

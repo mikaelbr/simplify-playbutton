@@ -153,7 +153,6 @@ TrackProvider.prototype.searchTrackSpotify = function (trackName, cb) {
     } // end cache
 
 
-    redis.incr("SPB_TRACKS_SEEN");
 
     // No cache found. Look up track URI from search.
     return spotify.search({type: 'track', query: trackName}, function (err, data) {
@@ -163,7 +162,8 @@ TrackProvider.prototype.searchTrackSpotify = function (trackName, cb) {
       }
 
       var trackURI = data.tracks[0].href;
-
+    
+      redis.incr("SPB_TRACKS_SEEN");
       redis.set(trackName, trackURI);
       cb(null, trackURI);
     });
