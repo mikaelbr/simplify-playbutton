@@ -45,3 +45,8 @@ function () {
 $(this).stop().animate({ opacity: 1.0 }, "fast");
 });
 });
+
+// tooltip demo
+$('#statistics').tooltip({
+  selector: "a[rel=tooltip]"
+})

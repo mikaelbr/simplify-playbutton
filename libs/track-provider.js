@@ -152,6 +152,9 @@ TrackProvider.prototype.searchTrackSpotify = function (trackName, cb) {
       }
     } // end cache
 
+
+    redis.incr("SPB_TRACKS_SEEN");
+
     // No cache found. Look up track URI from search.
     return spotify.search({type: 'track', query: trackName}, function (err, data) {
       if (err || !data || data.tracks.length < 1) {
@@ -202,7 +205,6 @@ TrackProvider.prototype.getURIListTop = function (user, options, resCb) {
           return;
       }
       async.map(data, fn, function (err, data) {
-        // redis.set(redisKey, JSON.stringify(data));
         resCb(null, data || []);
       });
   });

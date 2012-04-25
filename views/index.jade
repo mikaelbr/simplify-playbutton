@@ -6,6 +6,7 @@ html(lang='en-US')
 
     link(rel="icon", type="image/png", href="/favicon.png")
     link(rel='stylesheet', type='text/css', href='/stylesheets/style.css', media='all')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.tooltip.css', media='all')
     link(rel='stylesheet', type='text/css', href='/stylesheets/museo.css', media='all')
     link(rel='stylesheet', type='text/css', href='/stylesheets/charis.css', media='all')
     link(rel='stylesheet', type='text/css', href='/stylesheets/blue.css', media='all')
@@ -54,6 +55,19 @@ html(lang='en-US')
               a(href='http://last.fm') Last.fm
               |  username, and use the
               | generator down below. This will give you a iframe to paste into your blog any other site with HTML support.
+            br
+
+            h2 Some stats
+            ul#statistics
+              li 
+                a(rel="tooltip", title="The number of times Simplified Play Button Widget has been viewed!") #{totalViews}
+              li
+                a(rel="tooltip", title="The number of Spotify Tracks the Simplify Play Button has seen.") #{totalTracks}
+              li
+                a(rel="tooltip", title="The number of Play Buttons the Generator has created.") #{totalGenerated}
+              li
+                a(rel="tooltip", title="The number of JSON calls made to this service.") #{totalJSON}
+
             br
             p 
               strong  Notification: 
@@ -505,6 +519,7 @@ html(lang='en-US')
           script(type='text/javascript', src='//platform.twitter.com/widgets.js')
     //
        End Footer 
+    script(type='text/javascript', src='javascripts/bootstrap.tooltip.js')
     script(type='text/javascript', src='javascripts/generator.js')
     script(type='text/javascript', src='javascripts/scripts.js')
 

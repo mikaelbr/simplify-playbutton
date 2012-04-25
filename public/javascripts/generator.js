@@ -94,7 +94,8 @@
                     mode: mode,
                     offset: offset,
                     period: period,
-                    limit: limit
+                    limit: limit,
+                    generator: true
                 };
 
             return {
