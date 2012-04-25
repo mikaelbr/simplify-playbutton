@@ -914,6 +914,15 @@ a.enlarge span {
     float: none;
     width: 105px;
 }
+
+.forms fieldset #offset {
+    display: inline-block;
+    float: none;
+    width: 166px;
+    margin-left: 10px;
+}
+
+
 .forms fieldset .text-input {
     width: 250px;
     height: 21px;
@@ -931,7 +940,7 @@ a.enlarge span {
 .forms fieldset .text-area,
 .example-content .text-area {
     width: 250px;
-    height: 90px;
+    height: 70px;
     padding: 7px 10px;
     font-size: 12px;
     border: 1px solid #cfcfcf;
@@ -1181,11 +1190,15 @@ table th {
 
 
 table th:first-child {
-    width: 250px;
+    width: 100px;
 }
 
 table th:nth-child(2) {
-    width: 400px;
+    width: 500px;
+}
+
+table th:nth-child(3) {
+    width: 250px;
 }
 
 table th:last-child {

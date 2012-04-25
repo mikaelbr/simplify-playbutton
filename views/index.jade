@@ -3,6 +3,8 @@ html(lang='en-US')
   head
     meta(charset='UTF-8')
     title Simplify Play Button - #{title}
+
+    link(rel="icon", type="image/png", href="/favicon.png")
     link(rel='stylesheet', type='text/css', href='/stylesheets/style.css', media='all')
     link(rel='stylesheet', type='text/css', href='/stylesheets/museo.css', media='all')
     link(rel='stylesheet', type='text/css', href='/stylesheets/charis.css', media='all')
@@ -41,7 +43,7 @@ html(lang='en-US')
             p
               | This is a service for automaticly generating 
               a(href='https://developer.spotify.com/technologies/spotify-play-button/') Spotify Play Button
-              |  widget for your weekly 
+              |  widget for your 
               a(href='http://last.fm') Last.fm
               |  scrobbled tracks.
               | This service saves you the trouble of either making playlists of the tracks manually, or finding the spotify URI of
@@ -52,6 +54,13 @@ html(lang='en-US')
               a(href='http://last.fm') Last.fm
               |  username, and use the
               | generator down below. This will give you a iframe to paste into your blog any other site with HTML support.
+            br
+            p 
+              strong  Notification: 
+              | Updated to version 0.1.0. With this update, the URL for a play button is now 
+              code http://simplifyplay.herokuapp.com/user/«USERNAME»
+              |  .
+
             a.appstore(href="https://github.com/mikaelbr/simplify-playbutton")
               img(src='http://mikaelbr.github.com/metatune/images/octocat-logo.png', alt='')
               span
@@ -64,7 +73,7 @@ html(lang='en-US')
                 | Follow me on
                 em Twitter
           .one-third.last
-            iframe(frameborder='0', allowtransparency='true', width='280px', height='350px', src='http://simplifyplay.herokuapp.com/mikaelb1?offset=5')
+            iframe(frameborder='0', allowtransparency='true', width='280px', height='350px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?offset=5')
           .clear
           //
              End Intro Content 
@@ -75,7 +84,7 @@ html(lang='en-US')
       //
          Begin Wrapper 
       #wrapper
-        .intro Easily create a Spotify Play Button widget with your Last.fm scrobbled tracks.
+        .intro Easily create a Spotify Play Button widget with your Last.fm scrobbled tracks. Choose between top or loved tracks, or weekly chart lists.
         //
            Begin Screenshots Content 
         #generator.borderline
@@ -91,10 +100,12 @@ html(lang='en-US')
               li
                 a(href='#examples') Examples
               li
+                a(href='#releases') Release Notes
+              li
                 a(href='#license') Terms of Use
           p
             strong Note: 
-            | This generator uses the Simplify Play Button's JSON API, and therefor gives you a static "direct to the source" iframe. I.e. an iframe directly to the Spotify Play Button. It will not change over time in any way, so when a new week starts the same songs will still be in this list. To have this dynamic you must go through the Simplify Play Button iframe. You can see examples of this
+            | This generator uses the Simplify Play Button's JSON API, and therefor gives you a static "direct to the source" iframe. I.e. an iframe directly to the Spotify Play Button. It will not change over time in any way, so when a new week starts, a new song is loved or the top list changes, the same songs will still be in this list. To have this dynamic you must go through the Simplify Play Button iframe. You can see examples of this
             | further down in the documentation and examples.
           br
           //
@@ -108,6 +119,20 @@ html(lang='en-US')
                       li.form-row.text-input-row
                         label Last.fm Username*
                         input.text-input.required(type='text', name='username', value='', title='', placeholder='mikaelb1')
+                      li.form-row.text-input-row
+                        label Data Mode
+                        select(name='mode')
+                          option(value="top") Top
+                          option(value="loved") Loved
+                          option(value="weekly") Weekly
+                        select#period(name='period')
+                          option(value="overall") Overall
+                          option(value="7day") 7 Days
+                          option(value="1month") 1 Month 
+                          option(value="3month") 3 Months
+                          option(value="6month") 6 Months
+                          option(value="12month") 12 Months
+                        input#offset.text-input.required(type='text', name='offset', value='', placeholder="Week Offset")
                       li.form-row.text-input-row
                         label Theme
                         select(name='theme')
@@ -124,7 +149,8 @@ html(lang='en-US')
                         | x
                         input.text-input.half(type='text', name='height', value='330', title='')
                       li.form-row.text-input-row
-                        label Limit
+                        label Limit 
+                          span#limit-indicator (10) 
                         input.text-input(type='range', name='limit', value='10', min='1', max='20')
                       li.button-row
                         input.btn-submit(type='submit', value='Generate', name='submit')
@@ -134,7 +160,7 @@ html(lang='en-US')
                           iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='https://embed.spotify.com/?uri=spotify:trackset:mikaelb1%3A%20Last%20played%20tracks:2MVwrvjmcdt4MsYYLCYMt8,0wP3e5PzSxafy2TRtlayq9,31QMc40Ahc3fiLwHWI32kI,1ZU8wpP0XA8Qi9LcDgRSAT,0ShCNMVGhCxVR0j1CqXtq0,7qr1O3X9GnuyO7Z5PLxj6g,1VWZAuX9hbQbCW0iW3UQE5,4YkmvF9kPRR0HOOK5XUxjZ,3c1hfcsymUYQJcOL3HXdAD,1VvyRNSVBKuvENwpyiVlBU&theme=black&view=list')
                 .response
             #generator-result.one-third.last
-              iframe(frameborder='0', allowtransparency='true', width='250px', height='350px', src='http://simplifyplay.herokuapp.com/mikaelb1')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='350px', src='http://simplifyplay.herokuapp.com/user/mikaelb1')
         //
            End Screenshots Content 
         //
@@ -152,16 +178,21 @@ html(lang='en-US')
               li
                 a(href='#examples') Examples
               li
+                a(href='#releases') Release Notes
+              li
                 a(href='#license') Terms of Use
           //
              End Menu 
           p
             | This service is an extra layer on top of the regular 
             a(href='https://developer.spotify.com/technologies/spotify-play-button/') Spotify Play Button
-            | . All it does is fetch the recently played tracks of a user, searches through the Spotify Metadata API for URIs and generates an appropriate iframe to show of the new awesome play button.
+            | . It fetches data from a Last.fm user, searches through the Spotify Metadata API for URIs and generates an appropriate iframe to show of the new awesome play button.
           br
           p
             | Due to this only being a top layer, all the options and parameters from the original Spotify Play Button still exists. I highly recomend you read through their documentation, as I won't cover all limitations and such for the different params.
+          br
+          p
+            | The width and height specification works exactly the same way as with the regular Spotify Play Button.
           br
           h2 Basic usage
           p
@@ -169,13 +200,13 @@ html(lang='en-US')
             a(href='https://developer.spotify.com/technologies/spotify-play-button/documentation/') Spotify Play Button Documentation
             | , and swap out the iframe source with this:
           pre.codeout.url.
-            http://simplifyplay.herokuapp.com/«YOUR_LASTFM_USERNAME»
+            http://simplifyplay.herokuapp.com/user/«YOUR_LASTFM_USERNAME»
             
           p Resulting in this complete code:
           pre.codeout.url.
-            &lt;iframe src='http://simplifyplay.herokuapp.com/«YOUR_LASTFM_USERNAME»' frameborder='0' allowtransparency='true' width='250px' height='330px'&gt;&lt;/iframe&gt;
+            &lt;iframe src='http://simplifyplay.herokuapp.com/user/«YOUR_LASTFM_USERNAME»' frameborder='0' allowtransparency='true' width='250px' height='330px'&gt;&lt;/iframe&gt;
             
-          p Parameters (as seen below) can be appended after your username. See examples
+          p Parameters (as seen below) can be appended as GET parameters after your username. See examples.
           .hr
           h2 The original Spotify Play Button options
           p
@@ -207,6 +238,8 @@ html(lang='en-US')
                 td list
           .hr
           h2 Simplify Player Button – Specifics
+
+          h3 Global parameters
           table
             thead
               tr
@@ -218,36 +251,76 @@ html(lang='en-US')
               tr
                 td URL
                 td
-                  | The base url for your user. Simply this sites URL appended by your username. Append GET parms to this URL.
+                  | The base url for your user. Simply this sites URL appended by "user/«username»". Append GET parms to this URL.
                 td string
                 td
               tr
-                td offset
+                td mode
                 td
-                  | Week offset. An offset of 1 results in getting the previous weeks top track list, etc.
-                td
-                  | integer
-                  | 0
-                td 0
+                  | What data fetching mode to use from Last.fm
+                td top, loved, weekly
+                td top
               tr
                 td limit
                 td
                   | How many tracks to show. The Spotify Play Button has an internal restriction of 20 tracks for the trackset option.
                 td integer [1, 20]
                 td 10
+
           .hr
+
+          h3 Only applicable when using the "weekly" mode.
+
+          table
+            thead
+              tr
+                th Parameter
+                th Description
+                th Value
+                th Default
+            tbody
+              tr
+                td offset
+                td
+                  | Week offset. An offset of 1 results in getting the previous weeks top track list, etc.
+                td
+                  | integer [0, n]
+                td 0
+
+          .hr
+
+          h3 Only applicable when using the "top" mode.
+
+          table
+            thead
+              tr
+                th Parameter
+                th Description
+                th Value
+                th Default
+            tbody
+              tr
+                td period
+                td
+                  | The time period over which to retrieve top tracks for.
+                td
+                  | overall, 7day, 1month, 3month, 6month, 12month
+                td overall
+
+          .hr
+
           h2 JSON API
           p
             | There's also a JSON API. This is for when you want to show the generated Play Button without going all Inception with an iframe within an iframe.
           br
           p
             | To access the JSON data, just append a
-            code .json
-            | extension after your username in the URL. All parameters works as before, appended to the URL. For the JSON data, you can also use width and height as a GET parameter.
+            code  .json 
+            | extension after your username in the URL. All parameters works as before, appended to the URL. For the JSON data, you can also use width and height as a GET parameter – this way the generated HTML will include the proper dimensions.
           br
           h3 Example JSON response
           pre.codeout.url.
-            <a href="http://simplifyplay.herokuapp.com/mikaelb1.json">http://simplifyplay.herokuapp.com/mikaelb1.json</a>
+            <a href="http://simplifyplay.herokuapp.com/user/mikaelb1.json">http://simplifyplay.herokuapp.com/user/mikaelb1.json</a>
             
           pre.codeout.
             {
@@ -258,7 +331,8 @@ html(lang='en-US')
                 "theme": "black",
                 "height": 330,
                 "view": "list",
-                "HTML": "&lt;iframe frameborder='0' allowtransparency='true' width='250px' height='330px' src='https://embed.spotify.com/?uri=spotify:trackset:mikaelb1%3A%20Last%20played%20tracks:2MVwrvjmcdt4MsYYLCYMt8,0wP3e5PzSxafy2TRtlayq9,31QMc40Ahc3fiLwHWI32kI,1ZU8wpP0XA8Qi9LcDgRSAT,0ShCNMVGhCxVR0j1CqXtq0,7qr1O3X9GnuyO7Z5PLxj6g,1VWZAuX9hbQbCW0iW3UQE5,4YkmvF9kPRR0HOOK5XUxjZ,3c1hfcsymUYQJcOL3HXdAD,1VvyRNSVBKuvENwpyiVlBU&theme=black&view=list'&gt;&lt;/iframe&gt;"
+                "URL": "https://embed.spotify.com/?uri=spotify:trackset:mikaelb1%3A%20Last%20played%20tracks:2MVwrvjmcdt4MsYYLCYMt8,0wP3e5PzSxafy2TRtlayq9,31QMc40Ahc3fiLwHWI32kI,1ZU8wpP0XA8Qi9LcDgRSAT,0ShCNMVGhCxVR0j1CqXtq0,7qr1O3X9GnuyO7Z5PLxj6g,1VWZAuX9hbQbCW0iW3UQE5,4YkmvF9kPRR0HOOK5XUxjZ,3c1hfcsymUYQJcOL3HXdAD,1VvyRNSVBKuvENwpyiVlBU&amp;theme=black&amp;view=list",
+                "HTML": "&lt;iframe frameborder='0' allowtransparency='true' width='250px' height='330px' src='https://embed.spotify.com/?uri=spotify:trackset:mikaelb1%3A%20Last%20played%20tracks:2MVwrvjmcdt4MsYYLCYMt8,0wP3e5PzSxafy2TRtlayq9,31QMc40Ahc3fiLwHWI32kI,1ZU8wpP0XA8Qi9LcDgRSAT,0ShCNMVGhCxVR0j1CqXtq0,7qr1O3X9GnuyO7Z5PLxj6g,1VWZAuX9hbQbCW0iW3UQE5,4YkmvF9kPRR0HOOK5XUxjZ,3c1hfcsymUYQJcOL3HXdAD,1VvyRNSVBKuvENwpyiVlBU&amp;theme=black&amp;view=list'&gt;&lt;/iframe&gt;"
             }
                               
                               
@@ -279,6 +353,8 @@ html(lang='en-US')
               li
                 a.active(href='#examples') Examples
               li
+                a(href='#releases') Release Notes
+              li
                 a(href='#license') Terms of Use
           //
              End Menu 
@@ -287,40 +363,94 @@ html(lang='en-US')
             | The following examples uses my username. Replace «mikaelb1» with your username to make it work for you.
           .hr
           .two-third
-            h1 Dynamic Play Button
+            h1 Dynamic Play Button for Weekly Charts
             p
-              | This widget goes through the Simplify's services, and allways shows the newest track chart list from Last.fm. When new data
+              | This widget goes through the Simplify's services, and allways shows the newest weekly track chart list from Last.fm. When new data
               | is added to the Last.fm API (i.e. new week), the list will update.
+            br
+            h3 Code
+            textarea.text-area(readonly='true')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?mode=weekly')
+          .one-third.last
+            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?mode=weekly')
+          .clear
+          .hr
+          .two-third
+            h1 Showing top tracks for last weeks chart list as coverart
+            p
+              | In this example we use the
+              code  offset 
+              | parameter for showing the most played tracks for last weeks (always relative to current week.) chart list. We also try out a Spotify Play Button property; view.
+            br
+            h3 Code
+            textarea.text-area(readonly='true')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?mode=weekly&view=coverart&offset=1')
+          .one-third.last
+            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?mode=weekly&view=coverart&offset=1')
+          .clear
+
+          .hr
+          .two-third
+            h1 Showing the 5 Top Tracks for a month
+            p
+              | In this example we use the Top Tracks mode to find the tracks we listened most to this month.
+              | We'll use the standard mode (top), but we need to specify the limit and the period.
+              | We'll also try out another Spotify Play Button property; theme.
             br
             p
               | This widget is perfect for showing off your continuously awesome music taste to the world!
             br
             h3 Code
             textarea.text-area(readonly='true')
-              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/mikaelb1')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?limit=5&period=1month&theme=white')
           .one-third.last
-            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/mikaelb1')
-          .clear
-          .hr
-          .two-third
-            h1 Showing top tracks for last week as coverart
-            p
-              | In this example we use the
-              code offset
-              | parameter for showing the most played tracks for last week (always relative to current week.). We also try out a Spotify Play Button property; view.
-            br
-            h3 Code
-            textarea.text-area(readonly='true')
-              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/mikaelb1?view=coverart&offset=1')
-          .one-third.last
-            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/mikaelb1?view=coverart&offset=1')
+            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?limit=5&period=1month&theme=white')
           .clear
         //
            End Example Content 
+
         //
-           End Documentation Content 
+           Begin Release Notes Content 
+        #releases.borderline
+        .content
+          //
+             Begin Menu 
+          .menu
+            ul
+              li
+                a(href='#generator') Generator
+              li
+                a(href='#documentation') Documentation
+              li
+                a(href='#examples') Examples
+              li
+                a.active(href='#releases') Release Notes
+              li
+                a(href='#license') Terms of Use
+
+          //
+             End Menu 
+          h3
+            | Simplify Play Button 0.1.0
+            span.date Released on 25 April, 2012
+          ul.notes
+            li
+              | Added: Now supports more data from Last.fm. Both Loved Tracks and Top Tracks are now supported!
+            li Fixed: Added caching on an extra level, on the song to URI mapping aswell.
+            li Fixed: Better error handling
+            li
+              | Fixed: No longer making multiple requests due to file requests on base URL getting matched by the URL regex for users.
+              strong  Note: 
+              | This breaks earlier by changing from /username to /user/username in the URL.
+          .hr
+          h3
+            | Simplify Play Button 0.0.1
+            span.date Released on 24 April, 2012
+          ul.notes
+            li Initial BETA release.
         //
-           Begin Example Content 
+           End Release Notes Content 
+
         #license.borderline
         .content
           //

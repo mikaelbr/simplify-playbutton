@@ -33,7 +33,7 @@ app.enable("jsonp callback");
 // Routes
 
 app.get('/', routes.index);
-app.get('/:name.:format?/?', routes.user);
+app.get('/user/:name.:format?/?', routes.user);
 
 app.listen(process.env.PORT || 3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

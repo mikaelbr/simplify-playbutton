@@ -29,12 +29,11 @@ PlayButton.prototype.makeSrc = function (tracks) {
 */
 PlayButton.prototype.makeJSONFormatted = function (options) {
 
-    var url = 'https://embed.spotify.com/?uri=spotify:trackset:' +
+    options.URL = 'https://embed.spotify.com/?uri=spotify:trackset:' +
                 options.listname + ":" + options.tracklist +
                 '&theme=' + options.theme + '&view=' + options.view;
 
-    var HTML = "<iframe frameborder='0' allowtransparency='true' width='"+options.width+"px' height='"+options.height+"px' src='"+url+"'></iframe>";
-    options.HTML = HTML;
+    options.HTML = "<iframe frameborder='0' allowtransparency='true' width='"+options.width+"px' height='"+options.height+"px' src='"+options.URL+"'></iframe>";
     return options;
 };
 

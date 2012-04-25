@@ -19,12 +19,91 @@ TrackProvider.prototype.getWeeklyTrackChart = function (user, from, to, limit, c
         to: to,
         handlers: {
             success: function (d) {
+                
+                if (d.error) {
+                  cb(d, null);
+                  return;
+                }
+
                 var tracks = d.weeklytrackchart.track;
 
                 if (!tracks || tracks.length < 1) {
-                    cb.apply("No results", ["No results", null]);
+                    cb.apply("No tracks found", ["No tracks found", null]);
                     return;
                 }
+
+                tracks = (tracks.length > 1) ? tracks : [tracks];
+
+                if (tracks.length > limit) {
+                    tracks = tracks.splice(0, limit);
+                }
+
+                cb(null, tracks);
+            },
+            error: function (e) {
+                cb(e, null);
+            }
+        }
+    });
+};
+
+
+TrackProvider.prototype.getLovedTracks = function (user, limit, cb) {
+
+    lastfm.request("user.getLovedTracks", {
+        user: user,
+        limit: limit,
+        handlers: {
+            success: function (d) {
+                if (d.error) {
+                  cb(d, null);
+                  return;
+                }
+
+                var tracks = d.lovedtracks.track;
+
+                if (!tracks || tracks.length < 1) {
+                    cb.apply("No tracks found", ["No tracks found", null]);
+                    return;
+                }
+
+                tracks = (tracks.length > 1) ? tracks : [tracks];
+
+                if (tracks.length > limit) {
+                    tracks = tracks.splice(0, limit);
+                }
+
+                cb(null, tracks);
+            },
+            error: function (e) {
+                cb(e, null);
+            }
+        }
+    });
+};
+
+
+TrackProvider.prototype.getTopTracks = function (user, period, limit, cb) {
+
+    lastfm.request("user.getTopTracks", {
+        user: user,
+        limit: limit,
+        period: period,
+        handlers: {
+            success: function (d) {
+                if (d.error) {
+                  cb(d, null);
+                  return;
+                }
+
+                var tracks = d.toptracks.track;
+
+                if (!tracks || tracks.length < 1) {
+                    cb.apply("No tracks found", ["No tracks found", null]);
+                    return;
+                }
+                
+                tracks = (tracks.length > 1) ? tracks : [tracks];
 
                 if (tracks.length > limit) {
                     tracks = tracks.splice(0, limit);
@@ -58,24 +137,84 @@ TrackProvider.prototype.getWeeklyChartList = function (user, cb) {
 };
 
 TrackProvider.prototype.searchTrackSpotify = function (trackName, cb) {
-
+  
   // Filter out dangerous URL components
   trackName = trackName.replace(/[\?&]/g, "");
-  return spotify.search({type: 'track', query: trackName}, function (err, data) {
-    if (err || !data || data.tracks.length < 1) {
-      cb(null, null);
-      return;
-    }
 
-    cb(null, data.tracks[0].href);
+  // This will return a JavaScript String
+  redis.get(trackName, function (err, reply) {
+
+    if ( reply && !err ) {
+      try {
+        cb(null, reply);
+        return;
+      } catch (ex) {
+      }
+    } // end cache
+
+    // No cache found. Look up track URI from search.
+    return spotify.search({type: 'track', query: trackName}, function (err, data) {
+      if (err || !data || data.tracks.length < 1) {
+        cb(null, null);
+        return;
+      }
+
+      var trackURI = data.tracks[0].href;
+
+      redis.set(trackName, trackURI);
+      cb(null, trackURI);
+    });
+
   });
 };
 
-TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, resCb) {
+TrackProvider.prototype.getURIListLoved = function (user, options, resCb) {
+  var self = this,
+        fn = function (elm, callback) {
+            self.searchTrackSpotify(elm.artist.name + " " + elm.name, callback);
+        },
+        limit = options.limit;
+
+  self.getLovedTracks(user, limit, function (err, data) {
+      if (err) {
+          resCb(err, null);
+          return;
+      }
+      async.map(data, fn, function (err, data) {
+        // redis.set(redisKey, JSON.stringify(data));
+        resCb(null, data || []);
+      });
+  });
+};
+
+
+TrackProvider.prototype.getURIListTop = function (user, options, resCb) {
+  var self = this,
+        fn = function (elm, callback) {
+            self.searchTrackSpotify(elm.artist.name + " " + elm.name, callback);
+        },
+        period = options.period, // can be overall | 7day | 1month | 3month | 6month | 12month
+        limit = options.limit;
+
+  self.getTopTracks(user, period, limit, function (err, data) {
+      if (err) {
+          resCb(err, null);
+          return;
+      }
+      async.map(data, fn, function (err, data) {
+        // redis.set(redisKey, JSON.stringify(data));
+        resCb(null, data || []);
+      });
+  });
+};
+
+TrackProvider.prototype.getURIListWeekly = function (user, options, resCb) {
   var self = this,
         fn = function (elm, callback) {
             self.searchTrackSpotify(elm.artist["#text"] + " " + elm.name, callback);
-        };
+        },
+        dateOffset = options.dateOffset,
+        limit = options.limit;
 
   this.getWeeklyChartList(user, function (error, data) {
 
@@ -110,9 +249,7 @@ TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, 
     // This will return a JavaScript String
     redis.get(redisKey, function (err, reply) {
 
-      if (err) throw err;
-
-      if ( reply ) {
+      if ( reply && !err ) {
         try {
           resCb(null, JSON.parse(reply));
           return;
@@ -129,7 +266,7 @@ TrackProvider.prototype.getCompleteDataSet = function (user, dateOffset, limit, 
 
           async.map(data, fn, function (err, data) {
             redis.set(redisKey, JSON.stringify(data));
-            resCb(err, data);
+            resCb(null, data || []);
           });
       });
 
