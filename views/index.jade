@@ -72,7 +72,7 @@ html(lang='en-US')
             p 
               strong  Notification: 
               | Updated to version 0.1.0. With this update, the URL for a play button is now 
-              code http://simplifyplay.herokuapp.com/user/«USERNAME»
+              code http://#{hostname}/user/«USERNAME»
               |  .
 
             a.appstore(href="https://github.com/mikaelbr/simplify-playbutton")
@@ -87,7 +87,7 @@ html(lang='en-US')
                 | Follow me on
                 em Twitter
           .one-third.last
-            iframe(frameborder='0', allowtransparency='true', width='280px', height='350px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?offset=5')
+            iframe(frameborder='0', allowtransparency='true', width='280px', height='350px', src='http://#{hostname}/user/mikaelb1?offset=5')
           .clear
           //
              End Intro Content 
@@ -174,7 +174,7 @@ html(lang='en-US')
                           iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='https://embed.spotify.com/?uri=spotify:trackset:mikaelb1%3A%20Last%20played%20tracks:2MVwrvjmcdt4MsYYLCYMt8,0wP3e5PzSxafy2TRtlayq9,31QMc40Ahc3fiLwHWI32kI,1ZU8wpP0XA8Qi9LcDgRSAT,0ShCNMVGhCxVR0j1CqXtq0,7qr1O3X9GnuyO7Z5PLxj6g,1VWZAuX9hbQbCW0iW3UQE5,4YkmvF9kPRR0HOOK5XUxjZ,3c1hfcsymUYQJcOL3HXdAD,1VvyRNSVBKuvENwpyiVlBU&theme=black&view=list')
                 .response
             #generator-result.one-third.last
-              iframe(frameborder='0', allowtransparency='true', width='250px', height='350px', src='http://simplifyplay.herokuapp.com/user/mikaelb1')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='350px', src='http://#{hostname}/user/mikaelb1')
         //
            End Screenshots Content 
         //
@@ -214,11 +214,11 @@ html(lang='en-US')
             a(href='https://developer.spotify.com/technologies/spotify-play-button/documentation/') Spotify Play Button Documentation
             | , and swap out the iframe source with this:
           pre.codeout.url.
-            http://simplifyplay.herokuapp.com/user/«YOUR_LASTFM_USERNAME»
+            http://#{hostname}/user/«YOUR_LASTFM_USERNAME»
             
           p Resulting in this complete code:
           pre.codeout.url.
-            &lt;iframe src='http://simplifyplay.herokuapp.com/user/«YOUR_LASTFM_USERNAME»' frameborder='0' allowtransparency='true' width='250px' height='330px'&gt;&lt;/iframe&gt;
+            &lt;iframe src='http://#{hostname}/user/«YOUR_LASTFM_USERNAME»' frameborder='0' allowtransparency='true' width='250px' height='330px'&gt;&lt;/iframe&gt;
             
           p Parameters (as seen below) can be appended as GET parameters after your username. See examples.
           .hr
@@ -333,8 +333,8 @@ html(lang='en-US')
             | extension after your username in the URL. All parameters works as before, appended to the URL. For the JSON data, you can also use width and height as a GET parameter – this way the generated HTML will include the proper dimensions.
           br
           h3 Example JSON response
-          pre.codeout.url.
-            <a href="http://simplifyplay.herokuapp.com/user/mikaelb1.json">http://simplifyplay.herokuapp.com/user/mikaelb1.json</a>
+          pre.codeout.url
+            a(href="http://#{hostname}/user/mikaelb1.json") http://#{hostname}/user/mikaelb1.json
             
           pre.codeout.
             {
@@ -384,9 +384,9 @@ html(lang='en-US')
             br
             h3 Code
             textarea.text-area(readonly='true')
-              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?mode=weekly')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://#{hostname}/user/mikaelb1?mode=weekly')
           .one-third.last
-            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?mode=weekly')
+            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://#{hostname}/user/mikaelb1?mode=weekly')
           .clear
           .hr
           .two-third
@@ -398,9 +398,9 @@ html(lang='en-US')
             br
             h3 Code
             textarea.text-area(readonly='true')
-              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?mode=weekly&view=coverart&offset=1')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://#{hostname}/user/mikaelb1?mode=weekly&view=coverart&offset=1')
           .one-third.last
-            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?mode=weekly&view=coverart&offset=1')
+            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://#{hostname}/user/mikaelb1?mode=weekly&view=coverart&offset=1')
           .clear
 
           .hr
@@ -416,9 +416,9 @@ html(lang='en-US')
             br
             h3 Code
             textarea.text-area(readonly='true')
-              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?limit=5&period=1month&theme=white')
+              iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://#{hostname}/user/mikaelb1?limit=5&period=1month&theme=white')
           .one-third.last
-            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://simplifyplay.herokuapp.com/user/mikaelb1?limit=5&period=1month&theme=white')
+            iframe(frameborder='0', allowtransparency='true', width='250px', height='330px', src='http://#{hostname}/user/mikaelb1?limit=5&period=1month&theme=white')
           .clear
         //
            End Example Content 

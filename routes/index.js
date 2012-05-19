@@ -7,6 +7,8 @@ var playbutton = require("../libs/playbutton").play,
 
 exports.index = function (req, res) {
 
+
+
   async.series([
     function (callback) {
       redis.get("SPB_VIEWS_TOTAL", callback);
@@ -26,7 +28,8 @@ exports.index = function (req, res) {
       totalViews: results[0] || 0,
       totalTracks: results[1] || 0,
       totalGenerated: results[3] || 0,
-      totalJSON: results[2] || 0
+      totalJSON: results[2] || 0,
+      hostname: req.headers.host
     });
   });
 
